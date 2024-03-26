@@ -1,0 +1,26 @@
+<div class="container pt-5">
+    <div class="m-auto w-25">
+        <form action="/operation/add" method="POST" >
+            <label for="truck"  class="form-label">Choose Truck:</label>
+            <input class="form-control " list="trucks" name="userId" id="truck" placeholder="please choose truck name" required>
+            <datalist id="trucks"  >
+                {{#each users }}
+                        <option value="{{this.id}}">
+                {{/each}}
+            </datalist>
+
+            <label for="details" class="form-label my-2">parcel details:</label>
+            <input type="details" id="details" name="details" class="form-control my-2" placeholder="please enter parcel details" required>
+            
+            <label for="weight" class="form-label">Weight:</label>
+            <input type="weight" id="weight" name="weight" class="form-control my-2" placeholder="please enter parcel weight" required>
+
+            <button type="submit" class="btn btn-dark">ADD</button>
+        </form>
+        {{#if exp}}
+            <div class="alert alert-dark text-center mt-5" role="alert">
+                {{exp}}
+            </div>
+        {{/if}}
+    </div>
+</div>

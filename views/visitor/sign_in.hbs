@@ -1,0 +1,34 @@
+<div class="container pt-5">
+  <div class="m-auto w-25">
+    <form action="/users/sign_in" method="POST">
+      <label for="email" class="form-label">Email:</label>
+      <input
+        type="text"
+        name="email"
+        id="email"
+        class="form-control my-2"
+        placeholder="please enter your Truck ID"
+        required
+      />
+
+      <label for="password" class="form-label">Password:</label>
+      <input
+        type="password"
+        name="password"
+        id="password"
+        class="form-control my-2"
+        placeholder="please enter your  Password"
+        required
+      />
+
+      <button type="submit" class="btn btn-dark">sign_in</button>
+
+    </form>
+    {{#if exp}}
+      <div class="alert alert-dark text-center" role="alert">
+        {{exp}}
+      </div>
+    {{/if}}
+  </div>
+
+</div>

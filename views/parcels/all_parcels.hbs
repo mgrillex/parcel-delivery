@@ -1,0 +1,29 @@
+<div class="container pt-5">
+
+  <div class="m-auto w-75">
+    <table class="table table-dark table-striped">
+      <tr>
+        <td>parcel id</td>
+        <td>weight</td>
+        <td>Truck Id</td>
+        <td>request date</td>
+        <td>arrived date</td>
+        <td>state</td>
+      </tr>
+      {{#each parcels}}
+        <tr>
+          <td>{{this.id}} </td>
+          <td>{{this.weight}} kg </td>
+          <td>{{this.userId}} </td>
+          <td>{{this.createdAt}} </td>
+          <td>{{this.updatedAt}} </td>
+          {{#ifEquals this.status "1"}}
+            <td class="fs-5 fw-bold text-success">arrived </td>
+          {{else}}
+            <td class="fs-5 fw-bold text-danger">unarrived </td>
+          {{/ifEquals}}
+        </tr>
+      {{/each}}
+    </table>
+  </div>
+</div>
